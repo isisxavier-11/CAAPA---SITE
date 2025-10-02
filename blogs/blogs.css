@@ -1,0 +1,124 @@
+ @font-face {
+  font-family: 'Parkinsans';
+  src: url('fonts/Parkinsans-VariableFont_wght.ttf') format('truetype');
+   font-weight: 100 900; /* porque é variável, vai de ultra leve até super bold */
+  font-style: normal;
+}
+body {
+    background-color: rgb(247, 247, 247);
+    margin: 0; 
+    padding: 0;
+    font-family: 'Parkinsans', serif;
+}
+#menu {
+    background-color: rgb(21, 92, 225);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1000; 
+   display: flex;        
+   align-items: center;
+}
+
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 10px;
+    
+}
+
+#menu li {
+    margin-right: 20px;
+}
+
+#menu a {
+    color: aliceblue;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 0 10px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+#menu a:hover {
+    color:#0553d7;
+    background-color:aliceblue;
+    border-radius: 20px;
+}
+
+#blog {
+  padding: 50px 20px; /* espaço maior no topo */
+  background-color: #f0f4f8;
+  text-align: center;
+  font-family: 'Parkinsans';
+}
+
+.cards-blog {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;      /* 🔑 permite os cards quebrarem de linha */
+  margin-top: 40px;
+}
+
+#blog h1 {
+  font-size: 40px;
+  color: #0553d7;
+  margin-bottom: 40px;
+}
+
+
+.card-blog {
+  background-color: #fff;
+  padding: 25px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  max-width: 300px;
+  flex: 1 1 250px;       /* 🔑 garante largura fixa e quebra natural */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-blog:nth-child(5) {
+  flex-basis: 100%;     /* 🔑 faz o 5º card ocupar a linha inteira e ir pra baixo */
+}
+
+.card-blog:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card-blog h2 {
+  color: #0553d7;
+  margin-bottom: 15px;
+}
+
+.card-blog p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.card-blog a {
+  color: #5b7229;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-blog a:hover {
+  text-decoration: underline;
+}
+
+.card-blog img {
+  width: 100%;           /* ocupa toda a largura do card */
+  height: 180px;         /* ajuste a altura que quiser */
+  object-fit: cover;     /* mantém proporção e recorta o excesso */
+  border-radius: 15px;   /* bordas arredondadas */
+  margin-bottom: 15px;   /* espaço entre a imagem e o título */
+}

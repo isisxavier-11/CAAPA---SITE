@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Chat</title>
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+  <h2>Painel da Equipe</h2>
+  <div id="mensagens"></div>
+
+  <script type="module">
+    import { db } from "./firebase.js";
+    import { collection, onSnapshot, doc, updateDoc } 
+      from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+    const mensagensDiv = document.getElementById("mensagens");
+
+    // Escuta todas as mensagens
+    onSnapshot(collection(db, "mensagens"), (snapshot) => {
+      mensagensDiv.innerHTML = "";
+      snapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        const div = document.createElement("div");
+        div.innerHTML = `
+          <p><b>${data.userId}</b>: ${data.texto}</p>
+          <p><b>Resposta:</b> ${data.resposta || "— sem resposta —"}</p>
+          <input type="text" placeholder="Responder..." id="resp-${docSnap.id}">
+          <button onclick="responder('${docSnap.id}')">Enviar resposta</button>
+          <hr>
+        `;
+        mensagensDiv.appendChild(div);
+      });
+    });
+
+    // Função responder
+    window.responder = async (id) => {
+      const input = document.getElementById("resp-" + id);
+      const docRef = doc(db, "mensagens", id);
+      await updateDoc(docRef, { resposta: input.value });
+      input.value = "";
+    };
+  </script>
+</body>
+</html>

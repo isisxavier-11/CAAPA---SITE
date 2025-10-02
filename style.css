@@ -1,0 +1,589 @@
+ @font-face {
+  font-family: 'Parkinsans';
+  src: url('fonts/Parkinsans-VariableFont_wght.ttf') format('truetype');
+   font-weight: 100 900; /* porque é variável, vai de ultra leve até super bold */
+  font-style: normal;
+}
+body {
+    background-color: rgb(247, 247, 247);
+    margin: 0; 
+    padding: 0;
+    font-family: 'Parkinsans', serif;
+}
+
+/* Navbar no topo */
+#menu {
+    background-color: rgb(21, 92, 225);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1000; 
+   display: flex;        
+   align-items: center;
+}
+
+#menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 10px;
+    
+}
+
+#menu li {
+    margin-right: 20px;
+    transition: all 0.5s ease;
+}
+
+#menu li:hover {
+   transform: scale(1.1);
+}
+
+#menu a {
+    color: aliceblue;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 0 10px;
+    font-weight: 400;
+    transition: color;
+}
+
+#menu a:hover {
+    color:#0553d7;
+    background-color:aliceblue;
+    border-radius: 20px;
+}
+
+#menu span { 
+    margin-right: 20px; 
+    cursor: pointer;
+    font-size: 30px;
+    color: aliceblue;
+}
+#menu span{ 
+    margin-right: 20px; 
+    cursor: pointer;
+    font-size: 30px;
+    color: aliceblue;
+}
+
+
+/* BARRA LATERAL DIREITA */
+#barraL {
+  position: fixed;
+  top: 60px; /* abaixo do menu */
+  right: 0;
+  height: calc(100% - 60px); /* ocupa altura restante do topo */
+  width: 50px; /* largura quando fechada */
+  background-color: #5b7229;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  z-index: 999;
+  padding-top: 20px;
+}
+
+#barraL:hover {
+  width: 260px; /* abre ao passar o mouse */
+}
+
+#barraL a {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* espaço entre ícone e texto */
+  padding: 12px 15px;
+  color: aliceblue;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+#barraL a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+#barraL a img {
+  width: 30px;  
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+#barraL a span {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#barraL:hover a span {
+  opacity: 1;
+}
+
+
+
+
+.img-banner {
+  position: relative;
+  width: 100%;
+  max-height: 600px; /* limita a altura do banner */
+  overflow: hidden;
+  margin-top: 10px; /* dá um espaço pequeno do menu */
+}
+
+.img-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* mantém a proporção da imagem */
+  display: block;
+}
+
+section {
+  padding: 40px 20px; /* deixa um espaço agradável após o banner */
+  margin-top: 0;
+  font-size: 25px;
+}
+
+
+#inicio {
+    padding: 0;
+    margin-top: 0;
+    background-color: #fff;
+}
+
+.inicio-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 50px 100px;
+}
+
+.inicio-texto {
+    max-width: 600px;
+}
+
+.descricao-bold {
+    font-weight: 700;
+    color: #0553d7;
+    font-size: 45px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.descricao-normal {
+    font-weight: 400;
+    color: #5b7229; /* verde */
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.descricao-paragrafo {
+    font-weight: 400;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.botoes button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+.botoes button:hover{
+    transform:scale(1.1);
+}
+
+.btn-academico {
+    background-color: #0b2e63;
+    color: #fff;
+        font-family: 'Parkinsans';
+
+}
+
+.btn-psicologico {
+    background-color: #5b7229;
+    color: #fff;
+    font-family: 'Parkinsans';
+}
+
+
+.inicio-video video {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #5b7229;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* sombra suave */
+}
+
+
+#sobre h1{
+    font-size: 50px;
+    text-align: center;
+    color: #0553d7;
+    margin-top: 10px ;
+}
+
+#sobre p {
+font-size: 25px;
+color: #333;
+text-align: center;
+ max-width: 1000px;
+ margin: 0 auto; 
+ font-weight: 300;
+ margin-top: 10px;
+}
+
+#valores {
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+#valores h1 {
+    font-size: 40px;
+    color: #0553d7;
+    margin-bottom: 40px;
+}
+
+.cards-valores {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; 
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 300px;
+    flex: 1;
+    transition: transform 0.6s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    background-color: #5b7229;
+}
+
+.card h2 {
+    color: #5b7229;
+    margin-bottom: 15px;
+    transition: transform 0.6s, color;
+
+}
+
+.card p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: transform 0.6s, color;
+
+}
+
+.card:hover h2 {
+color: #fff;
+}
+
+.card:hover p {
+color: #fff;
+}
+
+.card img {
+    width: 200px;        
+    height: 200px;
+    object-fit: contain; 
+    margin-bottom: 10px; 
+    transition: transform 0.6s; 
+}
+
+.card:hover img {
+    transform: scale(1.1); 
+}
+
+#banner {
+  background-color: #0553d7; /* fundo azul */
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+#banner h1 {
+  font-size: 36px;
+  max-width: 800px;
+  margin: 0 auto;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+#fale {
+    text-align: center; /* centraliza os textos e contatos */
+    padding: 50px 20px;
+    margin-top: -20px;
+}
+
+#fale h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.ajuda {
+    font-weight: 900; /* bem grosso */
+    color:#0553d7;
+    display: block;   /* força linha separada */
+}
+
+.fale {
+    font-weight: 300; /* mais fino */
+    color: #688a2e;   /* mantém verde como no seu design */
+    display: block;
+}
+
+.contatos {
+    display: flex;
+    justify-content: center;
+    gap: 100px; /* espaçamento entre os ícones, ajuste se quiser */
+    flex-wrap: wrap; /* garante que quebra em telas menores */
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icone {
+    width: 150px;  /* ajustei para ficar proporcional */
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.2s;
+}
+
+.icone img {
+    width: 80px;
+    height: auto;
+}
+
+.icone:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.icone::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.3);
+    transform: rotate(45deg) translateX(-100%);
+    transition: all 0.5s ease;
+}
+
+.icone:hover::before {
+    transform: rotate(45deg) translateX(100%);
+}
+
+.contato p {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0042a6;
+}
+
+footer {
+    background-color: rgb(21, 92, 225);
+    font-size: 10px;
+    color: ghostwhite;
+    font-family: 'Parkinsans';
+    padding: 20px 30px;
+    font-weight: 300;
+
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* um bloco vai pra esquerda e o outro pra direita */
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-left img {
+    width: 50px;
+    height: auto;
+}
+
+.footer-left span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.footer-right small {
+    font-size: 15px;
+    opacity: 0.8; /* deixa mais discreto */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+hr{
+    border: none;       
+    height: 0.1px;         
+    background-color: #0b2e63; 
+}
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 1200px) {
+    .inicio-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    .inicio-texto {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .inicio-video video {
+        width: 400px;
+        height: 400px;
+    }
+
+    .botoes {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    #sobre h1 {
+        font-size: 40px;
+    }
+
+    #sobre p {
+        font-size: 20px;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+}
+
+/* p celulares */
+@media screen and (max-width: 768px) {
+    #menu ul {
+        display: none; 
+    }
+
+    #barra {
+        display: block;
+    }
+
+    .inicio-video video {
+        width: 300px;
+        height: 300px;
+    }
+
+    .descricao-bold {
+        font-size: 32px;
+    }
+
+    .descricao-normal {
+        font-size: 22px;
+    }
+
+    .descricao-paragrafo {
+        font-size: 16px;
+    }
+
+    .botoes button {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 0;
+    }
+
+    .contatos {
+        gap: 50px;
+    }
+
+    .icone {
+        width: 120px;
+        height: 120px;
+    }
+
+    .icone img {
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .inicio-video video {
+        width: 200px;
+        height: 200px;
+    }
+
+    .descricao-bold {
+        font-size: 26px;
+    }
+
+    .descricao-normal {
+        font-size: 18px;
+    }
+
+    .descricao-paragrafo {
+        font-size: 14px;
+    }
+
+    .contatos {
+        gap: 30px;
+    }
+
+    .icone {
+        width: 100px;
+        height: 100px;
+    }
+
+    .icone img {
+        width: 50px;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
