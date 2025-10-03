@@ -111,9 +111,10 @@ section {
 #importancia p {
     font-size: 25px;
     color: #333;
-    text-align: justify;
+    text-align: center;
     max-width: 1000px;
     margin: 0 auto;
     font-weight: 300;
-    line-height: 1.6;      /* deixa as linhas mais espaçadas e fácil de ler */
+    line-height: 1.6;   
+    font-style: none;   /* deixa as linhas mais espaçadas e fácil de ler */
 }
