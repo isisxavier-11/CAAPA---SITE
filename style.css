@@ -191,36 +191,32 @@ section {
     margin-bottom: 30px;
 }
 
+.botoes a,
 .botoes button {
+    display: inline-block;           
     padding: 12px 25px;
     font-size: 16px;
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    margin-bottom: 20px;
-    margin-right: 15px;
-    margin: 0 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease; 
+    margin: 0 10px 20px 10px;       
+    font-family: 'Parkinsans';
+    text-decoration: none;           
+    color: #fff;                     
+    transition: all 0.3s ease;
 }
-
-.botoes button:hover{
-    transform:scale(1.1);
+.botoes a:hover,
+.botoes button:hover {
+    transform: scale(1.1);
 }
 
 .btn-academico {
     background-color: #0b2e63;
-    color: #fff;
-        font-family: 'Parkinsans';
-
 }
-
 .btn-psicologico {
     background-color: #5b7229;
-    color: #fff;
-    font-family: 'Parkinsans';
 }
+
 
 
 .inicio-video video {
