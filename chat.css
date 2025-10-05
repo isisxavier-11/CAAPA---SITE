@@ -6,19 +6,17 @@
   font-family: Arial, sans-serif;
 }
 
-/* Fundo geral */
+
 body {
   background-color: #4368ac;
 }
 
-/* Container principal do chat */
 .chat-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-/* Header */
 .chat-header {
   background-color: #0047bb;
   color: #fff;
@@ -29,14 +27,12 @@ body {
   font-size: 18px;
 }
 
-/* Ícone voltar */
 .chat-header .back {
   margin-right: 10px;
   font-size: 20px;
   cursor: pointer;
 }
 
-/* Área das mensagens */
 .chat-messages {
   flex: 1;
   padding: 20px;
@@ -47,7 +43,6 @@ body {
   gap: 15px;
 }
 
-/* Mensagem esquerda */
 .message-left {
   display: flex;
   align-items: flex-start;
@@ -74,7 +69,7 @@ body {
   font-size: 14px;
 }
 
-/* Mensagem direita */
+
 .message-right {
   display: flex;
   justify-content: flex-end;

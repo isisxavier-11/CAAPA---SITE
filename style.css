@@ -126,8 +126,6 @@ body {
 }
 
 
-
-
 .img-banner {
   position: relative;
   width: 100%;
@@ -226,8 +224,22 @@ section {
     border-radius: 50%;
     border: 5px solid #5b7229;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* sombra suave */
+    animation: float 3s ease-in-out infinite;
+
+
 }
 
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
 
 #sobre h1{
     font-size: 50px;
@@ -264,6 +276,7 @@ text-align: center;
     gap: 30px;
     flex-wrap: wrap; 
 }
+
 
 .card {
     background-color: #ffffff;
@@ -501,12 +514,14 @@ hr{
 
 /* p celulares */
 @media screen and (max-width: 768px) {
+    
     #menu ul {
         display: none; 
     }
 
     #barra {
         display: block;
+        width: 30px; /* largura quando fechada */
     }
 
     .inicio-video video {
@@ -544,6 +559,25 @@ hr{
     .icone img {
         width: 60px;
     }
+
+   .card.hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    background-color: #5b7229;
+}
+
+.card.hover h2 {
+    color: #fff;
+}
+
+.card.hover p {
+    color: #fff;
+}
+
+.card.hover img {
+    transform: scale(1.1);
+}
+
 }
 
 @media screen and (max-width: 480px) {

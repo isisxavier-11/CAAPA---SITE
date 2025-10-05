@@ -19,3 +19,22 @@ setInterval(() => {
     fraseElemento.style.opacity = 1;
   }, 500);
 }, 4000);
+
+// seleciona todos os cards
+const cards = document.querySelectorAll('.card');
+
+// cria o observer
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting && window.innerWidth <= 768){ // só celular
+      entry.target.classList.add('hover'); // aplica o efeito hover
+    } else {
+      entry.target.classList.remove('hover'); // remove quando sai da tela
+    }
+  });
+}, {
+  threshold: 0.5 // dispara quando 50% do card está visível
+});
+
+// observa cada card
+cards.forEach(card => observer.observe(card));
