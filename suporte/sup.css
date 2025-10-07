@@ -1,4 +1,4 @@
-@font-face {
+ @font-face {
   font-family: 'Parkinsans';
   src: url('fonts/Parkinsans-VariableFont_wght.ttf') format('truetype');
    font-weight: 100 900; /* porque é variável, vai de ultra leve até super bold */
@@ -58,4 +58,356 @@ body {
     color:#0553d7;
     background-color:aliceblue;
     border-radius: 20px;
+}
+
+#menu span { 
+    margin-right: 20px; 
+    cursor: pointer;
+    font-size: 30px;
+    color: aliceblue;
+}
+#menu span{ 
+    margin-right: 20px; 
+    cursor: pointer;
+    font-size: 30px;
+    color: aliceblue;
+}
+
+
+/* BARRA LATERAL DIREITA */
+#barraL {
+  position: fixed;
+  top: 60px; /* abaixo do menu */
+  right: 0;
+  height: calc(100% - 60px); /* ocupa altura restante do topo */
+  width: 50px; /* largura quando fechada */
+  background-color: #5b7229;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  z-index: 999;
+  padding-top: 20px;
+}
+
+#barraL:hover {
+  width: 260px; /* abre ao passar o mouse */
+}
+
+#barraL a {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* espaço entre ícone e texto */
+  padding: 12px 15px;
+  color: aliceblue;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+#barraL a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+#barraL a img {
+  width: 30px;  
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+#barraL a span {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#barraL:hover a span {
+  opacity: 1;
+}
+
+
+
+
+.img-banner {
+  position: relative;
+  width: 100%;
+  max-height: 600px; /* limita a altura do banner */
+  overflow: hidden;
+  margin-top: 10px; /* dá um espaço pequeno do menu */
+}
+
+.img-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* mantém a proporção da imagem */
+  display: block;
+}
+
+section {
+  padding: 40px 20px; /* deixa um espaço agradável após o banner */
+  margin-top: 0;
+  font-size: 25px;
+}
+
+
+#inicio {
+    padding: 0;
+    margin-top: 0;
+    background-color: #fff;
+}
+
+.inicio-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 50px 100px;
+}
+
+.inicio-texto {
+    max-width: 700px;
+}
+
+.descricao-bold {
+    font-weight: 700;
+    color: #0553d7;
+    font-size: 50px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+.descricao-paragrafo {
+    font-weight: 400;
+    color: #333;
+    font-size: 25px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+
+.contatos {
+    display: flex;
+    justify-content: center;
+    gap: 100px; /* espaçamento entre os ícones, ajuste se quiser */
+    flex-wrap: wrap; /* garante que quebra em telas menores */
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icone {
+    width: 250px;  /* ajustei para ficar proporcional */
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.2s;
+}
+
+.icone img {
+    width: 150px;
+    height: auto;
+}
+
+
+.icone:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.icone::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.3);
+    transform: rotate(45deg) translateX(-100%);
+    transition: all 0.5s ease;
+}
+
+.icone:hover::before {
+    transform: rotate(45deg) translateX(100%);
+}
+
+.contato p {
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #0042a6;
+}
+
+footer {
+    background-color: rgb(21, 92, 225);
+    font-size: 10px;
+    color: ghostwhite;
+    font-family: 'Parkinsans';
+    padding: 20px 30px;
+    font-weight: 300;
+
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* um bloco vai pra esquerda e o outro pra direita */
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-left img {
+    width: 50px;
+    height: auto;
+}
+
+.footer-left span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.footer-right small {
+    font-size: 15px;
+    opacity: 0.8; /* deixa mais discreto */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+hr{
+    border: none;       
+    height: 0.1px;         
+    background-color: #0b2e63; 
+}
+
+/* ======= CELULARES ======= */
+@media screen and (max-width: 768px) {
+    /* Navbar */
+    #menu ul {
+        gap: 10px;
+        margin-left: 5px;
+    }
+    #menu a {
+        font-size: 16px;
+        padding: 5px 8px;
+    }
+    #menu span {
+        font-size: 28px;
+    }
+
+    /* Barra lateral fecha automaticamente */
+    #barraL {
+        width: 50px;
+    }
+    #barraL:hover {
+        width: 180px;
+    }
+
+    /* Banner */
+    .img-banner {
+        max-height: 400px;
+        margin-top: 60px; /* espaço do menu fixo */
+    }
+    .img-banner img {
+        object-fit: cover;
+    }
+
+    /* Container inicial vira coluna */
+    .inicio-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+    .inicio-texto {
+        max-width: 100%;
+        text-align: center;
+    }
+    .descricao-bold {
+        font-size: 35px;
+    }
+    .descricao-paragrafo {
+        font-size: 18px;
+    }
+
+    /* Vídeo/Imagem de apresentação */
+    .inicio-video img {
+        max-width: 250px;
+    }
+    .inicio-video .nome {
+        font-size: 20px;
+    }
+    .inicio-video .contato {
+        font-size: 16px;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .footer-left span {
+        font-size: 16px;
+    }
+    .footer-right small {
+        font-size: 12px;
+    }
+}
+
+/* ======= TABLETS ======= */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Navbar */
+    #menu a {
+        font-size: 18px;
+        padding: 6px 10px;
+    }
+
+    /* Container inicial */
+    .inicio-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 50px;
+        gap: 30px;
+    }
+    .descricao-bold {
+        font-size: 45px;
+    }
+    .descricao-paragrafo {
+        font-size: 22px;
+    }
+
+    /* Banner */
+    .img-banner {
+        max-height: 500px;
+        margin-top: 50px;
+    }
+
+    /* Vídeo/Imagem de apresentação */
+    .inicio-video img {
+        max-width: 300px;
+    }
+    .inicio-video .nome {
+        font-size: 22px;
+    }
+    .inicio-video .contato {
+        font-size: 18px;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }

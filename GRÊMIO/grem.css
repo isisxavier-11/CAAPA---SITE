@@ -178,21 +178,20 @@ section {
 .descricao-paragrafo {
     font-weight: 400;
     color: #333;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 1.6;
+    text-align: justify;
     margin-bottom: 30px;
 }
 
 .inicio-video img {
-    width: 100%; /* vai ocupar o espaço do container */
-    max-width: 400px; /* limite máximo */
-    aspect-ratio: 1 / 1; /* garante quadrado perfeito */
-    object-fit: cover; /* mantém a proporção e corta se necessário */
-    border-radius: 50%; /* círculo perfeito */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* sombra suave */
-    animation: float 3s ease-in-out infinite;
-    display: block; /* remove espaços extras */
-    margin: 0 auto; /* centraliza horizontalmente */
+width: 300px;           /* largura fixa */
+  height: 300px;          /* altura fixa */
+  object-fit: cover;      /* corta mantendo o centro */
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+  display: block;
+  margin: 0 auto;
 }
 
 .inicio-video {
@@ -373,7 +372,7 @@ hr{
         font-size: 45px;
     }
     .descricao-paragrafo {
-        font-size: 22px;
+        font-size: 15px;
     }
 
     /* Banner */
