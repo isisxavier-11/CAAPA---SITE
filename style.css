@@ -130,8 +130,8 @@ body {
   position: relative;
   width: 100%;
   max-height: 600px; /* limita a altura do banner */
-  overflow: hidden;
-  margin-top: 10px; /* dá um espaço pequeno do menu */
+  overflow: hidden; 
+  margin-top: 60px;
 }
 
 .img-banner img {
@@ -139,6 +139,7 @@ body {
   height: 100%;
   object-fit: contain; /* mantém a proporção da imagem */
   display: block;
+  object-fit: cover;
 }
 
 section {
@@ -225,6 +226,7 @@ section {
     border: 5px solid #5b7229;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* sombra suave */
     animation: float 3s ease-in-out infinite;
+    margin-left: -120px; /* ajusta o valor conforme quiser */
 
 
 }
@@ -514,72 +516,140 @@ hr{
 
 /* p celulares */
 @media screen and (max-width: 768px) {
+     .img-banner img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;      /* mantém tudo visível sem cortar */
+  }
+
+    #menu {
+    padding: 10px;
+    }
     
     #menu ul {
         display: none; 
     }
 
-    #barra {
-        display: block;
-        width: 30px; /* largura quando fechada */
+    #menu a {
+    font-size: 15px;
+    text-align: right;
     }
+    
+    #barraL{
+    width: 35px; /* largura quando fechada */
+    }
+
+    #barraL a img {
+    width: 25px;  
+    height: 25px;
+    margin-left: -8px;
+    }
+    
 
     .inicio-video video {
         width: 300px;
         height: 300px;
+        animation: float 3s ease-in-out infinite;
+        margin-left: 10px;
+
     }
 
     .descricao-bold {
-        font-size: 32px;
+        font-size: 35px;
+        text-align: center;
     }
 
     .descricao-normal {
-        font-size: 22px;
+        font-size: 25px;
+        text-align: center;
     }
 
     .descricao-paragrafo {
         font-size: 16px;
+
     }
 
+    #sobre h1{
+    font-size: 35px;
+    padding-left: 20px;   /* espaço da lateral esquerda */
+  padding-right: 20px;
+}
+
+    #sobre p {
+    font-size: 15px;
+    padding-left: 20px;   /* espaço da lateral esquerda */
+  padding-right: 20px;
+    }
+    
     .botoes button {
         width: 100%;
-        font-size: 16px;
+        font-size: 6px;
         padding: 12px 0;
     }
+
+    #fale h1 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.ajuda {
+    font-weight: 900; /* bem grosso */
+    color:#0553d7;
+    display: block;   /* força linha separada */
+}
+
+.fale {
+    font-weight: 300; /* mais fino */
+    color: #688a2e;   /* mantém verde como no seu design */
+    display: block;
+}
 
     .contatos {
         gap: 50px;
     }
 
     .icone {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
 
     .icone img {
-        width: 60px;
+        width: 50px;
     }
 
-   .card.hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    background-color: #5b7229;
-}
+    .cards-valores {
+        justify-content: center; /* centraliza os cards */
+        gap: 20px;               /* menos espaço entre eles */
+        padding: 0 10px;         /* deixa respiração nas laterais */
+    }
 
-.card.hover h2 {
-    color: #fff;
-}
+    .card {
+        max-width: 90%;           /* cada card ocupa no máximo 90% da tela */
+        padding: 15px;            /* diminui o padding interno */
+        flex: none;               /* mantém tamanho fixo */
+    }
 
-.card.hover p {
-    color: #fff;
-}
+    .card h2{
+    font-size: 28px;
+    }
 
-.card.hover img {
-    transform: scale(1.1);
+    .card img {
+        width: 100%;              /* imagem se ajusta à largura do card */
+        height: auto;             /* mantém proporção */
+    }
+    .card.hover { 
+        transform: translateY(-10px); 
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
+        background-color: #5b7229; } 
+        
+        .card.hover h2 { 
+            color: #fff; 
+        } 
+        
+        .card.hover p { 
+            color: #fff; 
+        }
 }
-
-}
-
 @media screen and (max-width: 480px) {
     .inicio-video video {
         width: 200px;
