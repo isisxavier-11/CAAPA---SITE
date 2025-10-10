@@ -72,17 +72,16 @@
 
 /* CONTAINER DO CHAT */
 .chat-container {
-    width: 5000px;
-    max-width: 95%;
-    height: 600px;
-    margin: 120px auto 50px auto;
-    background-color: #fefefe;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    margin: 50px auto;
+    width: 100%;
+  max-width: 600px;
+  height: calc(100vh - 200px); /* altura dinâmica, ajusta conforme a tela */
+  margin: 100px auto 40px auto;
+  background-color: #fefefe;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 /* CABEÇALHO */
@@ -296,4 +295,49 @@ footer {
     .footer-right small {
         font-size: 12px;
     }
+}
+
+@media (max-width: 768px) {
+  .chat-container {
+    max-width: 95%;
+    height: calc(100vh - 180px);
+    margin: 90px auto 30px auto;
+  }
+
+  .chat-header {
+    font-size: 17px;
+    padding: 12px;
+  }
+
+  .message {
+    font-size: 16px;
+    max-width: 85%;
+  }
+}
+
+/* Celulares menores */
+@media (max-width: 480px) {
+  .chat-container {
+    width: 95%;
+    height: calc(100vh - 160px);
+    margin: 80px auto 30px auto;
+  }
+
+  .chat-header {
+    font-size: 15px;
+  }
+
+  .message {
+    font-size: 14px;
+  }
+
+  .chat-input input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .chat-input button {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
 }
